@@ -4,7 +4,7 @@ const { resolve } = require('path');
 
 const app = express();
 app.use(cors());
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.static('static'));
 
@@ -59,3 +59,5 @@ app.get('/status', (req, res) => {
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+
+module.exports = app;
